@@ -6,7 +6,7 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 |----|----------|-----------------------|------|---------|--------|
 | HU-01 | Validación del formulario | Correctivo | `feature/HU-01-validacion-formulario` | 1.0.1 | Implementada |
 | HU-02 | Persistencia de tickets | Perfectivo | `feature/HU-02-persistencia` | 1.1.0 | Implementada |
-| HU-03 | Gestión de estado y técnico asignado | Perfectivo | `feature/HU-03-estado-asignacion` | 1.2.0 | Pendiente |
+| HU-03 | Gestión de estado y técnico asignado | Perfectivo | `feature/HU-03-estado-asignacion` | 1.2.0 | Implementada |
 | HU-04 | Búsqueda y filtros | Perfectivo | `feature/HU-04-busqueda-filtros` | 1.3.0 | Pendiente |
 | HU-05 | Respaldo y restauración | Preventivo | `feature/HU-05-respaldo` | 1.4.0 | Pendiente |
 
@@ -53,11 +53,11 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 
 **Criterios de aceptación**
 
-- [ ] Estados disponibles: Abierto, En progreso, Resuelto y Cerrado.
-- [ ] Se puede asignar un técnico desde una lista.
-- [ ] Un ticket no puede pasar a "En progreso" sin técnico asignado.
-- [ ] Un ticket cerrado ya no se puede modificar.
-- [ ] Se registra la fecha de la última actualización.
+- [x] Estados disponibles: Abierto, En progreso, Resuelto y Cerrado.
+- [x] Se puede asignar un técnico desde una lista.
+- [x] Un ticket no puede pasar a "En progreso" sin técnico asignado.
+- [x] Un ticket cerrado ya no se puede modificar.
+- [x] Se registra la fecha de la última actualización.
 
 ---
 

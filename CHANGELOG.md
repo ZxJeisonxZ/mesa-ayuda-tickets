@@ -2,6 +2,18 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y versionado semántico.
 
+## [1.2.0] - HU-03 (mantenimiento perfectivo)
+
+### Agregado
+- Cambio de estado del ticket: Abierto, En progreso, Resuelto y Cerrado.
+- Asignación de técnico responsable.
+- Fecha de última actualización en cada ticket.
+- Mensajes de aviso para confirmar cambios o informar errores.
+
+### Reglas de negocio
+- No se puede pasar a "En progreso" sin técnico asignado.
+- Un ticket cerrado no se puede modificar.
+
 ## [1.1.0] - HU-02 (mantenimiento perfectivo)
 
 ### Agregado
