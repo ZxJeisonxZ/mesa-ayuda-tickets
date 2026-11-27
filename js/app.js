@@ -1,5 +1,5 @@
 // Mesa de Ayuda - Lógica principal
-// Versión 1.0.1: se agrega validación del formulario (HU-01).
+// Versión 1.1.0: validación (HU-01) y persistencia en localStorage (HU-02).
 
 const PRIORIDADES = {
   baja: { etiqueta: 'Baja', clase: 'bg-slate-100 text-slate-700' },
@@ -15,8 +15,8 @@ const TIPOS = {
   preventivo: 'Preventivo',
 };
 
-let tickets = [];
-let siguienteId = 1;
+let tickets = Almacen.cargar();
+let siguienteId = Almacen.siguienteId(tickets);
 
 const form = document.getElementById('ticket-form');
 const lista = document.getElementById('ticket-list');
@@ -31,6 +31,10 @@ function formatearFecha(iso) {
   return new Date(iso).toLocaleString('es-CO', { dateStyle: 'medium', timeStyle: 'short' });
 }
 
+function persistir() {
+  Almacen.guardar(tickets);
+}
+
 function crearTicket(datos) {
   const ticket = {
     id: siguienteId++,
@@ -43,11 +47,13 @@ function crearTicket(datos) {
     creadoEn: new Date().toISOString(),
   };
   tickets.unshift(ticket);
+  persistir();
   return ticket;
 }
 
 function eliminarTicket(id) {
   tickets = tickets.filter((t) => t.id !== id);
+  persistir();
 }
 
 function renderTicket(t) {
