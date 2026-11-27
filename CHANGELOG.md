@@ -2,6 +2,15 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y versionado semántico.
 
+## [1.0.1] - HU-01 (mantenimiento correctivo)
+
+### Corregido
+- El formulario ya no permite registrar tickets sin título, descripción o solicitante.
+- Se validan longitudes mínimas y máximas, y los errores se muestran debajo de cada campo.
+
+### Agregado
+- Módulo `js/validation.js`.
+
 ## [1.0.0]
 
 ### Agregado
