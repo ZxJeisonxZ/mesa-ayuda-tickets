@@ -1,5 +1,5 @@
 // Mesa de Ayuda - Lógica principal
-// Versión 1.0.0: registro, listado y eliminación de tickets (solo en memoria).
+// Versión 1.0.1: se agrega validación del formulario (HU-01).
 
 const PRIORIDADES = {
   baja: { etiqueta: 'Baja', clase: 'bg-slate-100 text-slate-700' },
@@ -69,6 +69,22 @@ function renderTicket(t) {
     </article>`;
 }
 
+function mostrarErrores(errores) {
+  form.querySelectorAll('[data-error]').forEach((p) => {
+    const campo = p.dataset.error;
+    const input = form.elements[campo];
+    if (errores[campo]) {
+      p.textContent = errores[campo];
+      p.classList.remove('hidden');
+      input?.classList.add('border-red-500');
+    } else {
+      p.textContent = '';
+      p.classList.add('hidden');
+      input?.classList.remove('border-red-500');
+    }
+  });
+}
+
 function render() {
   contador.textContent = `${tickets.length} ticket(s)`;
   if (tickets.length === 0) {
@@ -81,6 +97,9 @@ function render() {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const datos = Object.fromEntries(new FormData(form));
+  const errores = Validacion.validarTicket(datos);
+  mostrarErrores(errores);
+  if (!Validacion.esValido(errores)) return;
   crearTicket(datos);
   form.reset();
   render();

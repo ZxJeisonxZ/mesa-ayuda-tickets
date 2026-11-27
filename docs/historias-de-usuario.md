@@ -4,7 +4,7 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 
 | ID | Historia | Tipo de mantenimiento | Rama | Versión | Estado |
 |----|----------|-----------------------|------|---------|--------|
-| HU-01 | Validación del formulario | Correctivo | `feature/HU-01-validacion-formulario` | 1.0.1 | Pendiente |
+| HU-01 | Validación del formulario | Correctivo | `feature/HU-01-validacion-formulario` | 1.0.1 | Implementada |
 | HU-02 | Persistencia de tickets | Perfectivo | `feature/HU-02-persistencia` | 1.1.0 | Pendiente |
 | HU-03 | Gestión de estado y técnico asignado | Perfectivo | `feature/HU-03-estado-asignacion` | 1.2.0 | Pendiente |
 | HU-04 | Búsqueda y filtros | Perfectivo | `feature/HU-04-busqueda-filtros` | 1.3.0 | Pendiente |
@@ -22,11 +22,11 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 
 **Criterios de aceptación**
 
-- [ ] El título es obligatorio y debe tener entre 5 y 80 caracteres.
-- [ ] La descripción es obligatoria y debe tener al menos 10 caracteres.
-- [ ] El solicitante es obligatorio.
-- [ ] Cada error se muestra debajo de su campo y el ticket no se registra.
-- [ ] Los errores desaparecen cuando el ticket se registra correctamente.
+- [x] El título es obligatorio y debe tener entre 5 y 80 caracteres.
+- [x] La descripción es obligatoria y debe tener al menos 10 caracteres.
+- [x] El solicitante es obligatorio.
+- [x] Cada error se muestra debajo de su campo y el ticket no se registra.
+- [x] Los errores desaparecen cuando el ticket se registra correctamente.
 
 ---
 
