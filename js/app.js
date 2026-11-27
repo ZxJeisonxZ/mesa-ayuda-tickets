@@ -1,5 +1,5 @@
 // Mesa de Ayuda - Lógica principal
-// Versión 1.2.0: validación (HU-01), persistencia (HU-02) y gestión de estado y técnico (HU-03).
+// Versión 1.3.0: validación (HU-01), persistencia (HU-02), estado y técnico (HU-03) y filtros (HU-04).
 
 const PRIORIDADES = {
   baja: { etiqueta: 'Baja', clase: 'bg-slate-100 text-slate-700' },
@@ -32,6 +32,10 @@ const form = document.getElementById('ticket-form');
 const lista = document.getElementById('ticket-list');
 const contador = document.getElementById('ticket-count');
 const aviso = document.getElementById('aviso');
+const filtroTexto = document.getElementById('filtro-texto');
+const filtroEstado = document.getElementById('filtro-estado');
+const filtroPrioridad = document.getElementById('filtro-prioridad');
+const botonLimpiar = document.getElementById('limpiar-filtros');
 
 function escaparHTML(texto) {
   const mapa = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
@@ -159,13 +163,26 @@ function mostrarErrores(errores) {
   });
 }
 
+function criteriosActuales() {
+  return {
+    texto: filtroTexto.value,
+    estado: filtroEstado.value,
+    prioridad: filtroPrioridad.value,
+  };
+}
+
 function render() {
-  contador.textContent = `${tickets.length} ticket(s)`;
+  const visibles = Filtros.aplicar(tickets, criteriosActuales());
+  contador.textContent = `Mostrando ${visibles.length} de ${tickets.length}`;
   if (tickets.length === 0) {
     lista.innerHTML = '<p class="text-center text-slate-400 bg-white rounded-xl shadow p-6">No hay tickets registrados.</p>';
     return;
   }
-  lista.innerHTML = tickets.map(renderTicket).join('');
+  if (visibles.length === 0) {
+    lista.innerHTML = '<p class="text-center text-slate-400 bg-white rounded-xl shadow p-6">Ningún ticket coincide con los filtros.</p>';
+    return;
+  }
+  lista.innerHTML = visibles.map(renderTicket).join('');
 }
 
 form.addEventListener('submit', (e) => {
@@ -200,6 +217,17 @@ lista.addEventListener('change', (e) => {
   } else {
     mostrarAviso(`Ticket #${id} actualizado.`, 'ok');
   }
+  render();
+});
+
+// HU-04: búsqueda y filtros
+filtroTexto.addEventListener('input', render);
+filtroEstado.addEventListener('change', render);
+filtroPrioridad.addEventListener('change', render);
+botonLimpiar.addEventListener('click', () => {
+  filtroTexto.value = '';
+  filtroEstado.value = '';
+  filtroPrioridad.value = '';
   render();
 });
 

@@ -7,7 +7,7 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 | HU-01 | Validación del formulario | Correctivo | `feature/HU-01-validacion-formulario` | 1.0.1 | Implementada |
 | HU-02 | Persistencia de tickets | Perfectivo | `feature/HU-02-persistencia` | 1.1.0 | Implementada |
 | HU-03 | Gestión de estado y técnico asignado | Perfectivo | `feature/HU-03-estado-asignacion` | 1.2.0 | Implementada |
-| HU-04 | Búsqueda y filtros | Perfectivo | `feature/HU-04-busqueda-filtros` | 1.3.0 | Pendiente |
+| HU-04 | Búsqueda y filtros | Perfectivo | `feature/HU-04-busqueda-filtros` | 1.3.0 | Implementada |
 | HU-05 | Respaldo y restauración | Preventivo | `feature/HU-05-respaldo` | 1.4.0 | Pendiente |
 
 ---
@@ -69,10 +69,10 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 
 **Criterios de aceptación**
 
-- [ ] Búsqueda por texto en título, descripción y solicitante (sin distinguir mayúsculas ni tildes).
-- [ ] Filtro por estado y por prioridad.
-- [ ] El contador muestra "Mostrando X de Y".
-- [ ] Botón para limpiar los filtros.
+- [x] Búsqueda por texto en título, descripción y solicitante (sin distinguir mayúsculas ni tildes).
+- [x] Filtro por estado y por prioridad.
+- [x] El contador muestra "Mostrando X de Y".
+- [x] Botón para limpiar los filtros.
 
 ---
 
