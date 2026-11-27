@@ -5,7 +5,7 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 | ID | Historia | Tipo de mantenimiento | Rama | Versión | Estado |
 |----|----------|-----------------------|------|---------|--------|
 | HU-01 | Validación del formulario | Correctivo | `feature/HU-01-validacion-formulario` | 1.0.1 | Implementada |
-| HU-02 | Persistencia de tickets | Perfectivo | `feature/HU-02-persistencia` | 1.1.0 | Pendiente |
+| HU-02 | Persistencia de tickets | Perfectivo | `feature/HU-02-persistencia` | 1.1.0 | Implementada |
 | HU-03 | Gestión de estado y técnico asignado | Perfectivo | `feature/HU-03-estado-asignacion` | 1.2.0 | Pendiente |
 | HU-04 | Búsqueda y filtros | Perfectivo | `feature/HU-04-busqueda-filtros` | 1.3.0 | Pendiente |
 | HU-05 | Respaldo y restauración | Preventivo | `feature/HU-05-respaldo` | 1.4.0 | Pendiente |
@@ -38,10 +38,10 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 
 **Criterios de aceptación**
 
-- [ ] Los tickets se guardan en `localStorage` cada vez que se crean, modifican o eliminan.
-- [ ] Al abrir la aplicación se cargan los tickets guardados.
-- [ ] Los consecutivos (#ID) continúan desde el último ticket guardado.
-- [ ] Si los datos guardados están corruptos, la aplicación inicia vacía sin fallar.
+- [x] Los tickets se guardan en `localStorage` cada vez que se crean, modifican o eliminan.
+- [x] Al abrir la aplicación se cargan los tickets guardados.
+- [x] Los consecutivos (#ID) continúan desde el último ticket guardado.
+- [x] Si los datos guardados están corruptos, la aplicación inicia vacía sin fallar.
 
 ---
 
