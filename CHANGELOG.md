@@ -2,6 +2,49 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y versionado semántico.
 
+## [1.4.0] - HU-05 (mantenimiento preventivo)
+
+### Agregado
+- Exportación de los tickets a un archivo `tickets-respaldo-AAAA-MM-DD.json`.
+- Importación de respaldos con validación de estructura y confirmación antes de reemplazar.
+- Módulo `js/backup.js`.
+
+## [1.3.0] - HU-04 (mantenimiento perfectivo)
+
+### Agregado
+- Búsqueda por texto en título, descripción y solicitante (sin distinguir mayúsculas ni tildes).
+- Filtros por estado y por prioridad, con botón para limpiarlos.
+- El contador muestra "Mostrando X de Y".
+- Módulo `js/filters.js`.
+
+## [1.2.0] - HU-03 (mantenimiento perfectivo)
+
+### Agregado
+- Cambio de estado del ticket: Abierto, En progreso, Resuelto y Cerrado.
+- Asignación de técnico responsable.
+- Fecha de última actualización en cada ticket.
+- Mensajes de aviso para confirmar cambios o informar errores.
+
+### Reglas de negocio
+- No se puede pasar a "En progreso" sin técnico asignado.
+- Un ticket cerrado no se puede modificar.
+
+## [1.1.0] - HU-02 (mantenimiento perfectivo)
+
+### Agregado
+- Persistencia de tickets en `localStorage`: se conservan al recargar o cerrar el navegador.
+- El consecutivo de los tickets continúa desde el último guardado.
+- Módulo `js/storage.js`.
+
+## [1.0.1] - HU-01 (mantenimiento correctivo)
+
+### Corregido
+- El formulario ya no permite registrar tickets sin título, descripción o solicitante.
+- Se validan longitudes mínimas y máximas, y los errores se muestran debajo de cada campo.
+
+### Agregado
+- Módulo `js/validation.js`.
+
 ## [1.0.0]
 
 ### Agregado
