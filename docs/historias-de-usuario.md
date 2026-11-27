@@ -8,7 +8,7 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 | HU-02 | Persistencia de tickets | Perfectivo | `feature/HU-02-persistencia` | 1.1.0 | Implementada |
 | HU-03 | Gestión de estado y técnico asignado | Perfectivo | `feature/HU-03-estado-asignacion` | 1.2.0 | Implementada |
 | HU-04 | Búsqueda y filtros | Perfectivo | `feature/HU-04-busqueda-filtros` | 1.3.0 | Implementada |
-| HU-05 | Respaldo y restauración | Preventivo | `feature/HU-05-respaldo` | 1.4.0 | Pendiente |
+| HU-05 | Respaldo y restauración | Preventivo | `feature/HU-05-respaldo` | 1.4.0 | Implementada |
 
 ---
 
@@ -84,7 +84,7 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 
 **Criterios de aceptación**
 
-- [ ] Botón "Exportar respaldo" que descarga `tickets-respaldo-AAAA-MM-DD.json`.
-- [ ] Botón "Importar respaldo" que carga un archivo JSON.
-- [ ] Se valida la estructura del archivo antes de importarlo y se informa si no es válido.
-- [ ] Se pide confirmación antes de reemplazar los tickets actuales.
+- [x] Botón "Exportar respaldo" que descarga `tickets-respaldo-AAAA-MM-DD.json`.
+- [x] Botón "Importar respaldo" que carga un archivo JSON.
+- [x] Se valida la estructura del archivo antes de importarlo y se informa si no es válido.
+- [x] Se pide confirmación antes de reemplazar los tickets actuales.
