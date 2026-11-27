@@ -20,6 +20,7 @@ No requiere instalación: abre `index.html` en el navegador (se necesita interne
 ├── js/
 │   ├── validation.js
 │   ├── storage.js
+│   ├── filters.js
 │   └── app.js
 ├── docs/
 │   └── historias-de-usuario.md
