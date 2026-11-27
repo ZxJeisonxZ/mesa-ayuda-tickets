@@ -1,0 +1,14 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Configuración local del editor
+.vscode/
+.idea/
+
+# Notas y archivos personales que no deben subirse
+notas-personales.txt
+*.log
+
+# Respaldos generados por la aplicación (HU-05)
+tickets-respaldo-*.json
