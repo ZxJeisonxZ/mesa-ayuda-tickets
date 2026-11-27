@@ -1,5 +1,6 @@
 // Mesa de Ayuda - Lógica principal
-// Versión 1.3.0: validación (HU-01), persistencia (HU-02), estado y técnico (HU-03) y filtros (HU-04).
+// Versión 1.4.0: validación (HU-01), persistencia (HU-02), estado y técnico (HU-03),
+// filtros (HU-04) y respaldo/restauración (HU-05).
 
 const PRIORIDADES = {
   baja: { etiqueta: 'Baja', clase: 'bg-slate-100 text-slate-700' },
@@ -36,6 +37,8 @@ const filtroTexto = document.getElementById('filtro-texto');
 const filtroEstado = document.getElementById('filtro-estado');
 const filtroPrioridad = document.getElementById('filtro-prioridad');
 const botonLimpiar = document.getElementById('limpiar-filtros');
+const botonExportar = document.getElementById('exportar');
+const inputImportar = document.getElementById('importar');
 
 function escaparHTML(texto) {
   const mapa = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
@@ -229,6 +232,34 @@ botonLimpiar.addEventListener('click', () => {
   filtroEstado.value = '';
   filtroPrioridad.value = '';
   render();
+});
+
+// HU-05: respaldo y restauración
+botonExportar.addEventListener('click', () => {
+  if (tickets.length === 0) {
+    mostrarAviso('No hay tickets para exportar.');
+    return;
+  }
+  Respaldo.exportar(tickets);
+  mostrarAviso(`Respaldo exportado con ${tickets.length} ticket(s).`, 'ok');
+});
+
+inputImportar.addEventListener('change', async () => {
+  const archivo = inputImportar.files[0];
+  inputImportar.value = '';
+  if (!archivo) return;
+  try {
+    const importados = await Respaldo.importar(archivo);
+    const mensaje = `Se reemplazarán los ${tickets.length} ticket(s) actuales por ${importados.length} del respaldo. ¿Continuar?`;
+    if (tickets.length > 0 && !confirm(mensaje)) return;
+    tickets = importados;
+    siguienteId = Almacen.siguienteId(tickets);
+    persistir();
+    render();
+    mostrarAviso(`Respaldo importado: ${importados.length} ticket(s).`, 'ok');
+  } catch (error) {
+    mostrarAviso(error.message);
+  }
 });
 
 render();

@@ -2,6 +2,13 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y versionado semántico.
 
+## [1.4.0] - HU-05 (mantenimiento preventivo)
+
+### Agregado
+- Exportación de los tickets a un archivo `tickets-respaldo-AAAA-MM-DD.json`.
+- Importación de respaldos con validación de estructura y confirmación antes de reemplazar.
+- Módulo `js/backup.js`.
+
 ## [1.3.0] - HU-04 (mantenimiento perfectivo)
 
 ### Agregado
