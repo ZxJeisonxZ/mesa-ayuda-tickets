@@ -4,11 +4,11 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 
 | ID | Historia | Tipo de mantenimiento | Rama | Versión | Estado |
 |----|----------|-----------------------|------|---------|--------|
-| HU-01 | Validación del formulario | Correctivo | `feature/HU-01-validacion-formulario` | 1.0.1 | Pendiente |
-| HU-02 | Persistencia de tickets | Perfectivo | `feature/HU-02-persistencia` | 1.1.0 | Pendiente |
-| HU-03 | Gestión de estado y técnico asignado | Perfectivo | `feature/HU-03-estado-asignacion` | 1.2.0 | Pendiente |
-| HU-04 | Búsqueda y filtros | Perfectivo | `feature/HU-04-busqueda-filtros` | 1.3.0 | Pendiente |
-| HU-05 | Respaldo y restauración | Preventivo | `feature/HU-05-respaldo` | 1.4.0 | Pendiente |
+| HU-01 | Validación del formulario | Correctivo | `feature/HU-01-validacion-formulario` | 1.0.1 | Implementada |
+| HU-02 | Persistencia de tickets | Perfectivo | `feature/HU-02-persistencia` | 1.1.0 | Implementada |
+| HU-03 | Gestión de estado y técnico asignado | Perfectivo | `feature/HU-03-estado-asignacion` | 1.2.0 | Implementada |
+| HU-04 | Búsqueda y filtros | Perfectivo | `feature/HU-04-busqueda-filtros` | 1.3.0 | Implementada |
+| HU-05 | Respaldo y restauración | Preventivo | `feature/HU-05-respaldo` | 1.4.0 | Implementada |
 
 ---
 
@@ -22,11 +22,11 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 
 **Criterios de aceptación**
 
-- [ ] El título es obligatorio y debe tener entre 5 y 80 caracteres.
-- [ ] La descripción es obligatoria y debe tener al menos 10 caracteres.
-- [ ] El solicitante es obligatorio.
-- [ ] Cada error se muestra debajo de su campo y el ticket no se registra.
-- [ ] Los errores desaparecen cuando el ticket se registra correctamente.
+- [x] El título es obligatorio y debe tener entre 5 y 80 caracteres.
+- [x] La descripción es obligatoria y debe tener al menos 10 caracteres.
+- [x] El solicitante es obligatorio.
+- [x] Cada error se muestra debajo de su campo y el ticket no se registra.
+- [x] Los errores desaparecen cuando el ticket se registra correctamente.
 
 ---
 
@@ -38,10 +38,10 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 
 **Criterios de aceptación**
 
-- [ ] Los tickets se guardan en `localStorage` cada vez que se crean, modifican o eliminan.
-- [ ] Al abrir la aplicación se cargan los tickets guardados.
-- [ ] Los consecutivos (#ID) continúan desde el último ticket guardado.
-- [ ] Si los datos guardados están corruptos, la aplicación inicia vacía sin fallar.
+- [x] Los tickets se guardan en `localStorage` cada vez que se crean, modifican o eliminan.
+- [x] Al abrir la aplicación se cargan los tickets guardados.
+- [x] Los consecutivos (#ID) continúan desde el último ticket guardado.
+- [x] Si los datos guardados están corruptos, la aplicación inicia vacía sin fallar.
 
 ---
 
@@ -53,11 +53,11 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 
 **Criterios de aceptación**
 
-- [ ] Estados disponibles: Abierto, En progreso, Resuelto y Cerrado.
-- [ ] Se puede asignar un técnico desde una lista.
-- [ ] Un ticket no puede pasar a "En progreso" sin técnico asignado.
-- [ ] Un ticket cerrado ya no se puede modificar.
-- [ ] Se registra la fecha de la última actualización.
+- [x] Estados disponibles: Abierto, En progreso, Resuelto y Cerrado.
+- [x] Se puede asignar un técnico desde una lista.
+- [x] Un ticket no puede pasar a "En progreso" sin técnico asignado.
+- [x] Un ticket cerrado ya no se puede modificar.
+- [x] Se registra la fecha de la última actualización.
 
 ---
 
@@ -69,10 +69,10 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 
 **Criterios de aceptación**
 
-- [ ] Búsqueda por texto en título, descripción y solicitante (sin distinguir mayúsculas ni tildes).
-- [ ] Filtro por estado y por prioridad.
-- [ ] El contador muestra "Mostrando X de Y".
-- [ ] Botón para limpiar los filtros.
+- [x] Búsqueda por texto en título, descripción y solicitante (sin distinguir mayúsculas ni tildes).
+- [x] Filtro por estado y por prioridad.
+- [x] El contador muestra "Mostrando X de Y".
+- [x] Botón para limpiar los filtros.
 
 ---
 
@@ -84,7 +84,7 @@ Cada historia se implementa en su propia rama `feature/HU-XX-...`, se integra a 
 
 **Criterios de aceptación**
 
-- [ ] Botón "Exportar respaldo" que descarga `tickets-respaldo-AAAA-MM-DD.json`.
-- [ ] Botón "Importar respaldo" que carga un archivo JSON.
-- [ ] Se valida la estructura del archivo antes de importarlo y se informa si no es válido.
-- [ ] Se pide confirmación antes de reemplazar los tickets actuales.
+- [x] Botón "Exportar respaldo" que descarga `tickets-respaldo-AAAA-MM-DD.json`.
+- [x] Botón "Importar respaldo" que carga un archivo JSON.
+- [x] Se valida la estructura del archivo antes de importarlo y se informa si no es válido.
+- [x] Se pide confirmación antes de reemplazar los tickets actuales.
